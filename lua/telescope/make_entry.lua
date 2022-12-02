@@ -308,8 +308,6 @@ do
       end
     end
 
-    local display_string = "%s%s%s"
-
     mt_vimgrep_entry = {
       cwd = vim.fn.expand(opts.cwd or vim.loop.cwd()),
 
@@ -329,7 +327,7 @@ do
 
         local display, hl_group = utils.transform_devicons(
           entry.filename,
-          string.format(display_string, display_filename, coordinates, entry.text),
+          display_filename,
           disable_devicons
         )
 
